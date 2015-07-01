@@ -1,0 +1,14 @@
+ //compile our template into html
+var taskTemplate = _.template($('#todolist-template').html());
+
+var task = [
+  {todo: "Read", description: "Study Programming"},
+  {todo: "Clean", description: "Vacuum, Sweep, Throw Out the Trash"},
+  {todo: "Relax", description: "Watch OITNB"}
+];
+
+_.each(task, function (todo, index) {
+  var $tasktemplate = $(tasktemplate(todo));
+  $tasktemplate.attr('data-index', index);
+  $taskUL.append($tasktemplate);
+});

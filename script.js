@@ -1,42 +1,38 @@
 $(function() {
 
-  var $taskUL = $("#task_list");
-    var $askUL = $("#ask_list");
+ 
+  var $taskName = $("#taskname").val();
+  var description = $("#description").val();
+  var toDoData = {name: taskname, description: description}
 
   var $newItemForm = $("#new_task");
-  var task_list = [];
+  var tasklist = [];
 
   $newItemForm.on("submit", function(event) {
-      event.preventDefault();
-      console.log('form submitted!');
-      console.log($("#task_name").val());
-      
-      //add new item to view   
-      var $newTI = $('<li>' + $('#task_name').val() + '</li>');  
-      $('#task_list').append($newTI);
-
-      //add new item to model
-      task_list.push({
-        task_name: $('#task_name').val(),
-        description: ""
-      });   
-     
+    event.preventDefault();
+    console.log('form submitted!');
+    console.log($("#taskname").val());
   });    
 
+
+
+// append our new todo to the page
  
+$taskName.append('<li class="tasklist">)' + toDoData.name + ' - ' + toDoData.description + '</li>');
+
+
+});
+
 //add a click event handler to mark task done
- $taskUL.on("click", ".task", function(event) {
+ var $taskUL = $("#tasklist");
+
+$taskUL.on("click", ".task", function(event) {
   console.log(this); 
   console.log($("this"));
   $(this).children().addClass("done");
   $(this).addClass("done");
 
-  });
-
-
-
 });
-
 
 
 

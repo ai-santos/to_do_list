@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shopping List</title>
+  <title>Main To Do List</title>
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
+  
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -19,74 +15,56 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-          <div class="text-center"> 
-            <h1>Errands and To Do List</h1>
-            <hr>
-            <form id="new_task">
-          <div class="form-group">
-            <input class="form-control" id="task_name" placeholder="What do you need to do?" autofocus>
-          </div>
-            </form>
-          <div class="form-group">
-            <input type="submit" class="btn btn-success" value="Add to list!">
-          </div>
-          <h4>Tasks To Be Done</h4>
-            <h5>Description</h5>
-            <ul id="task_list">
-              <li class="task" id="task1">
-                <p>
-                   Soccer 
-                </p>
-                   <p>
-                    Drive Bobby to soccer practice at
-                    Lake Meritt Soccer Field
-                </p>
-              </li>
-              <li class="task" id="task2">
-               <p>
-                  Work Clothes   
-               </p>
-                  <p>
-                    Pick up dry cleaning at Swift's on 3212 California Street  
-                </p>
-                <li class="task" id="task3"> 
-                <p>
-                  Parking Ticket   
-               </p>
-                  <p>
-                    Mail SF Parking Ticket to 2222 Bryant Street, SF, CA 94122  
-                  </p> 
-                </li>
-              <li class="task" id="task4">               
-                <p>
-                  Transcript
-                </p>
-                  <p>
-                    Mail college transcripts to 
-                    3452 College Ave., New Brunswick, NJ
-                  </p>  
-              </li>
-            </ul>
+        <div class="text-center">
+          <h1>My Main To Do List</h1>
           <hr>
-          </div>
-        </div>  
-    </div>
-  </div>    
-        
-      
-     
-    
-  
+          <form id="new_to_do_list">
+           <div class="form-group">
+              <input class="form-control" id="taskname" placeholder="What will you do tomorrow?" autofocus>
+            </div> 
+             <div class="form-group">
+              <input class="form-control" id="description" placeholder="Describe your task." autofocus>
+            </div> 
+            <div class="form-group">
+              <input type="submit" class="btn btn-success" value="Add to list!">
+            </div>
+          </form>
+          <hr>
+        </div>
+        <h4>Categories</h4>
+        <ul id="tasklist">
+          <li class="task">Clean Up</li>
+          <li class="task">Read</li>
+          <li class="task">Study Programming</li>
+          <li class="task">Go Shopping</li>
+          <li class="task">Watch anime</li>
+          <li class="task">Listen to music</li>
 
-  <!-- jquery -->
+        </ul>
+      </div>
+    </div>
+
+  
+</body>
+<!-- jquery -->
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
   <!-- Latest compiled and minified Bootstrap JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+<!-- underscore -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  
   <!-- custom script -->
   <script type="text/javascript" src="script.js"></script>
-</body>
-   
-  </body>
+
+    <!-- underscore template -->
+  <script type="text/template" id="todolist-template">
+    <div class="task">
+      <p>
+        <%= todo %> - <%= description %>
+      </p>
+      <hr>
+    </div>
+  </script>
 </html>
