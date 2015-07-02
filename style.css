@@ -1,11 +1,7 @@
 .done {
-  color = "red";
+  line-color = red;
   text-decoration: line-through;
 }
-p {
-  text-align: left;
-  font-style: bold;
-}
-#description {
-  font-family: sans-serif;
+h1 {
+  font-size: 32px
 }
